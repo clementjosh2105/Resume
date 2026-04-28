@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clement Joshua | SDE III</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #111827;
+      --subtext: #6b7280;
+      --accent: #2563eb;
+      --border: #e5e7eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .role {
+      color: var(--accent);
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    .contact {
+      margin-top: 15px;
+      font-size: 14px;
+      color: var(--subtext);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    section {
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--subtext);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .job {
+      margin-bottom: 15px;
+    }
+
+    .job-title {
+      font-weight: 500;
+    }
+
+    .job-meta {
+      font-size: 13px;
+      color: var(--subtext);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      background: #eef2ff;
+      color: var(--accent);
+      border-radius: 8px;
+      font-size: 12px;
+      margin: 4px 6px 0 0;
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="card">
+
+      <h1>Clement Merwin Joshua P</h1>
+      <div class="role">Software Development Engineer III</div>
+
+      <div class="contact">
+        joejoshua99@gmail.com · +91 9952119583 · 
+        <a href="https://www.linkedin.com/in/clement-josh/" target="_blank">LinkedIn</a> · Bangalore, India
+      </div>
+
+      <section>
+        <h2>Summary</h2>
+        <p>
+          SDE III with 4+ years experience in AI systems, big data infrastructure,
+          and high-speed product delivery. Known for building production-ready AI features
+          like SQL Assistant and Conversational AI while maintaining strong security and scalability.
+        </p>
+      </section>
+
+      <section class="grid">
+
+        <div>
+          <h2>Skills</h2>
+          <div>
+            <span class="badge">Java</span>
+            <span class="badge">Spring Boot</span>
+            <span class="badge">Python</span>
+            <span class="badge">FastAPI</span>
+            <span class="badge">Scala</span>
+            <span class="badge">Spark</span>
+            <span class="badge">Kafka</span>
+            <span class="badge">Redis</span>
+            <span class="badge">Hadoop</span>
+            <span class="badge">SQL</span>
+            <span class="badge">Security</span>
+          </div>
+        </div>
+
+        <div>
+          <h2>Education</h2>
+          <p><strong>M.Tech Cyber Security</strong><br>Karunya Institute (2021)</p>
+          <p style="margin-top:10px;"><strong>B.Tech Computer Science</strong><br>Karunya Institute (2021)</p>
+        </div>
+
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+
+        <div class="job">
+          <div class="job-title">SDE III</div>
+          <div class="job-meta">Platform 3 Solutions · 2025 – Present · Bengaluru</div>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Team Lead / Senior Software Engineer</div>
+          <div class="job-meta">Platform 3 Solutions · 2024 – 2025 · Chennai</div>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Software Engineer</div>
+          <div class="job-meta">Platform 3 Solutions · 2022 – 2024 · Chennai</div>
+        </div>
+
+      </section>
+
+      <section>
+        <h2>Key Achievements</h2>
+        <ul>
+          <li>Built SQL Assistant & Conversational AI in production</li>
+          <li>Delivered major features 50–70% faster than estimates</li>
+          <li>Improved search latency from 7s → 700ms</li>
+          <li>Led team of 5 engineers across 6 modules</li>
+          <li>Designed scalable ingestion architecture</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Engineering Impact</h2>
+        <ul>
+          <li>Custom DAG ingestion system (NiFi/Airflow POCs)</li>
+          <li>Dynamic Redis-based deployment configs</li>
+          <li>Kafka ingestion issue resolution</li>
+          <li>System-wide performance optimization</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+</body>
+</html>
