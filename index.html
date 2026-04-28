@@ -5,7 +5,6 @@
   <title>Clement Joshua | SDE III</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -18,6 +17,15 @@
       --border: #e5e7eb;
     }
 
+    body.dark {
+      --bg: #0b0f19;
+      --card: #111827;
+      --text: #f9fafb;
+      --subtext: #9ca3af;
+      --accent: #60a5fa;
+      --border: #1f2937;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -28,7 +36,7 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      transition: 0.3s ease;
     }
 
     .container {
@@ -39,10 +47,10 @@
 
     .card {
       background: var(--card);
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       border: 1px solid var(--border);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
     }
 
     h1 {
@@ -57,7 +65,7 @@
     }
 
     .contact {
-      margin-top: 15px;
+      margin-top: 12px;
       font-size: 14px;
       color: var(--subtext);
     }
@@ -72,16 +80,11 @@
     }
 
     h2 {
-      font-size: 14px;
-      letter-spacing: 1px;
+      font-size: 13px;
       text-transform: uppercase;
+      letter-spacing: 1px;
       color: var(--subtext);
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 15px;
-      color: var(--text);
+      margin-bottom: 12px;
     }
 
     .grid {
@@ -90,14 +93,14 @@
       gap: 20px;
     }
 
-    ul {
-      list-style: none;
-    }
-
-    li {
-      margin-bottom: 8px;
-      color: var(--text);
-      font-size: 15px;
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      margin: 4px;
+      border-radius: 8px;
+      background: rgba(37,99,235,0.1);
+      color: var(--accent);
+      font-size: 12px;
     }
 
     .job {
@@ -113,18 +116,59 @@
       color: var(--subtext);
     }
 
-    .badge {
-      display: inline-block;
-      padding: 5px 10px;
-      background: #eef2ff;
+    /* Achievements */
+    .achievements {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .achievement-card {
+      background: linear-gradient(135deg, var(--card), rgba(0,0,0,0.02));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      transition: 0.25s ease;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .achievement-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .achievement-desc {
+      font-size: 14px;
+      color: var(--subtext);
+    }
+
+    .metric {
+      margin-top: 10px;
+      font-size: 13px;
       color: var(--accent);
-      border-radius: 8px;
-      font-size: 12px;
-      margin: 4px 6px 0 0;
+      font-weight: 500;
+    }
+
+    /* Toggle Button */
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--text);
     }
 
     @media (max-width: 700px) {
-      .grid {
+      .grid, .achievements {
         grid-template-columns: 1fr;
       }
     }
@@ -134,96 +178,136 @@
 
 <body>
 
-  <div class="container">
-    <div class="card">
+<button class="toggle" onclick="toggleDark()">🌙 Dark</button>
 
-      <h1>Clement Merwin Joshua P</h1>
-      <div class="role">Software Development Engineer III</div>
+<div class="container">
+  <div class="card">
 
-      <div class="contact">
-        joejoshua99@gmail.com · +91 9952119583 · 
-        <a href="https://www.linkedin.com/in/clement-josh/" target="_blank">LinkedIn</a> · Bangalore, India
+    <h1>Clement Merwin Joshua P</h1>
+    <div class="role">Software Development Engineer III</div>
+
+    <div class="contact">
+      joejoshua99@gmail.com · +91 9952119583 · 
+      <a href="https://www.linkedin.com/in/clement-josh/" target="_blank">LinkedIn</a> · Bangalore
+    </div>
+
+    <section>
+      <h2>Summary</h2>
+      <p>
+        SDE III specializing in AI-driven systems, big data infrastructure, and high-speed delivery.
+        Proven ability to build production-ready AI solutions while maintaining scalability and security.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div>
+        <h2>Skills</h2>
+        <div>
+          <span class="badge">Java</span>
+          <span class="badge">Spring Boot</span>
+          <span class="badge">Python</span>
+          <span class="badge">FastAPI</span>
+          <span class="badge">Kafka</span>
+          <span class="badge">Redis</span>
+          <span class="badge">Spark</span>
+          <span class="badge">Hadoop</span>
+          <span class="badge">SQL</span>
+        </div>
       </div>
 
-      <section>
-        <h2>Summary</h2>
-        <p>
-          SDE III with 4+ years experience in AI systems, big data infrastructure,
-          and high-speed product delivery. Known for building production-ready AI features
-          like SQL Assistant and Conversational AI while maintaining strong security and scalability.
-        </p>
-      </section>
+      <div>
+        <h2>Education</h2>
+        <p><strong>M.Tech Cyber Security</strong><br>Karunya Institute (2021)</p>
+        <p style="margin-top:10px;"><strong>B.Tech Computer Science</strong><br>Karunya Institute (2021)</p>
+      </div>
+    </section>
 
-      <section class="grid">
+    <section>
+      <h2>Experience</h2>
+      <div class="job">
+        <div class="job-title">SDE III</div>
+        <div class="job-meta">Platform 3 · 2025 – Present · Bengaluru</div>
+      </div>
+      <div class="job">
+        <div class="job-title">Senior Engineer / Team Lead</div>
+        <div class="job-meta">Platform 3 · 2024 – 2025 · Chennai</div>
+      </div>
+      <div class="job">
+        <div class="job-title">Software Engineer</div>
+        <div class="job-meta">Platform 3 · 2022 – 2024 · Chennai</div>
+      </div>
+    </section>
 
-        <div>
-          <h2>Skills</h2>
-          <div>
-            <span class="badge">Java</span>
-            <span class="badge">Spring Boot</span>
-            <span class="badge">Python</span>
-            <span class="badge">FastAPI</span>
-            <span class="badge">Scala</span>
-            <span class="badge">Spark</span>
-            <span class="badge">Kafka</span>
-            <span class="badge">Redis</span>
-            <span class="badge">Hadoop</span>
-            <span class="badge">SQL</span>
-            <span class="badge">Security</span>
+    <section>
+      <h2>Key Achievements</h2>
+
+      <div class="achievements">
+
+        <div class="achievement-card">
+          <div class="achievement-title">AI Feature Delivery</div>
+          <div class="achievement-desc">
+            Built SQL Assistant, Conversational AI, and PII classification systems in production.
           </div>
+          <div class="metric">⚡ Delivered in weeks</div>
         </div>
 
-        <div>
-          <h2>Education</h2>
-          <p><strong>M.Tech Cyber Security</strong><br>Karunya Institute (2021)</p>
-          <p style="margin-top:10px;"><strong>B.Tech Computer Science</strong><br>Karunya Institute (2021)</p>
+        <div class="achievement-card">
+          <div class="achievement-title">Execution Speed</div>
+          <div class="achievement-desc">
+            Delivered critical modules like Archive & Rehydration under aggressive timelines.
+          </div>
+          <div class="metric">🚀 50–70% faster</div>
         </div>
 
-      </section>
-
-      <section>
-        <h2>Experience</h2>
-
-        <div class="job">
-          <div class="job-title">SDE III</div>
-          <div class="job-meta">Platform 3 Solutions · 2025 – Present · Bengaluru</div>
+        <div class="achievement-card">
+          <div class="achievement-title">Performance Optimization</div>
+          <div class="achievement-desc">
+            Re-engineered search to drastically reduce latency across large datasets.
+          </div>
+          <div class="metric">⚡ 7s → &lt;700ms</div>
         </div>
 
-        <div class="job">
-          <div class="job-title">Team Lead / Senior Software Engineer</div>
-          <div class="job-meta">Platform 3 Solutions · 2024 – 2025 · Chennai</div>
+        <div class="achievement-card">
+          <div class="achievement-title">Scalable Architecture</div>
+          <div class="achievement-desc">
+            Built ingestion systems handling large-scale unstructured data pipelines.
+          </div>
+          <div class="metric">📦 Multi-cloud ready</div>
         </div>
 
-        <div class="job">
-          <div class="job-title">Software Engineer</div>
-          <div class="job-meta">Platform 3 Solutions · 2022 – 2024 · Chennai</div>
+        <div class="achievement-card">
+          <div class="achievement-title">Leadership</div>
+          <div class="achievement-desc">
+            Led 5 engineers delivering 6 modules and 150+ fixes.
+          </div>
+          <div class="metric">👥 Strong team impact</div>
         </div>
 
-      </section>
+        <div class="achievement-card">
+          <div class="achievement-title">Security Improvements</div>
+          <div class="achievement-desc">
+            Fixed encryption vulnerabilities and improved system stability.
+          </div>
+          <div class="metric">🔐 Production-grade</div>
+        </div>
 
-      <section>
-        <h2>Key Achievements</h2>
-        <ul>
-          <li>Built SQL Assistant & Conversational AI in production</li>
-          <li>Delivered major features 50–70% faster than estimates</li>
-          <li>Improved search latency from 7s → 700ms</li>
-          <li>Led team of 5 engineers across 6 modules</li>
-          <li>Designed scalable ingestion architecture</li>
-        </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>Engineering Impact</h2>
-        <ul>
-          <li>Custom DAG ingestion system (NiFi/Airflow POCs)</li>
-          <li>Dynamic Redis-based deployment configs</li>
-          <li>Kafka ingestion issue resolution</li>
-          <li>System-wide performance optimization</li>
-        </ul>
-      </section>
-
-    </div>
   </div>
+</div>
+
+<script>
+  function toggleDark() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+  }
+
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+</script>
 
 </body>
 </html>
