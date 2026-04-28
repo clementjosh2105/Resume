@@ -43,7 +43,6 @@ body {
   justify-content:space-between;
   padding:18px 40px;
   border-bottom:1px solid var(--border);
-  z-index:10;
 }
 
 /* HERO */
@@ -60,18 +59,10 @@ body {
   gap:40px;
 }
 
-.hero-text {
-  flex:1;
-}
+.hero-text { flex:1; }
 
-.hero h1 {
-  font-size:44px;
-  line-height:1.2;
-}
-
-.hero span {
-  color:var(--accent);
-}
+.hero h1 { font-size:44px; }
+.hero span { color:var(--accent); }
 
 .hero p {
   margin-top:20px;
@@ -85,7 +76,6 @@ body {
   object-fit:cover;
   border-radius:20px;
   border:1px solid var(--border);
-  box-shadow:0 20px 60px rgba(0,0,0,0.5);
 }
 
 .contact {
@@ -106,9 +96,7 @@ body {
   padding:0 20px;
 }
 
-h2 {
-  margin-bottom:25px;
-}
+h2 { margin-bottom:25px; }
 
 /* GRID */
 .grid {
@@ -124,16 +112,26 @@ h2 {
   border-radius:16px;
   padding:24px;
   margin-bottom:20px;
-  transition:0.3s;
-}
-
-.card:hover {
-  transform:translateY(-5px);
 }
 
 .metric {
   margin-top:10px;
   color:var(--accent);
+}
+
+/* CASE STUDY */
+.case h3 {
+  margin-top:20px;
+  color:var(--accent);
+}
+
+.case ul {
+  padding-left:18px;
+  color:var(--sub);
+}
+
+.case li {
+  margin-bottom:6px;
 }
 
 /* TIMELINE */
@@ -160,9 +158,7 @@ h2 {
   border-radius:50%;
 }
 
-.timeline-item h3 {
-  color:var(--accent);
-}
+.timeline-item h3 { color:var(--accent); }
 
 /* ANIMATION */
 .fade {
@@ -175,18 +171,13 @@ h2 {
   transform:translateY(0);
 }
 
-/* MOBILE */
 @media(max-width:900px){
   .hero-flex {
     flex-direction:column-reverse;
     text-align:center;
   }
-  .grid {
-    grid-template-columns:1fr;
-  }
-  .contact {
-    justify-content:center;
-  }
+  .grid { grid-template-columns:1fr; }
+  .contact { justify-content:center; }
 }
 </style>
 </head>
@@ -194,7 +185,7 @@ h2 {
 <body>
 
 <div class="nav">
-  <div>Clement Joshua</div>
+  <div>Clement Merwin Joshua P</div>
   <div onclick="toggleTheme()" style="cursor:pointer;">🌙</div>
 </div>
 
@@ -208,8 +199,8 @@ h2 {
       </h1>
 
       <p>
-        Software Development Engineer III working on Archon Datastore (ADS).
-        I build systems from scratch, optimize performance, and deliver production-ready AI solutions.
+        SDE III working on Archon Datastore (ADS), focused on AI, big data, and system design.
+        Known for solving complex problems, debugging deep system issues, and building products from scratch.
       </p>
 
       <div class="contact">
@@ -219,7 +210,7 @@ h2 {
     </div>
 
     <div class="hero-image">
-      <img src="1748325370220.jpeg" alt="Clement Joshua">
+      <img src="1748325370220.jpeg">
     </div>
 
   </div>
@@ -228,7 +219,6 @@ h2 {
 <!-- SKILLS -->
 <div class="section fade">
   <h2>Skills</h2>
-
   <div class="grid">
     <div class="card"><strong>Backend</strong><p>Java · Spring Boot · Python · FastAPI</p></div>
     <div class="card"><strong>Big Data</strong><p>Hadoop · Spark · Trino</p></div>
@@ -243,26 +233,71 @@ h2 {
 
   <div class="card">
     <h3>Archon Analyzer & LWA (2026)</h3>
-    <p>Built two applications from scratch without requirements or UI mocks.</p>
-    <div class="metric">🚀 Greenfield systems · ⚡ Zero-error demos</div>
+    <p>Built applications from scratch without requirements, delivered zero-error demos.</p>
+    <div class="metric">🚀 Greenfield systems · ⚡ High ownership</div>
   </div>
 
   <div class="card">
     <h3>AI Platform (2025)</h3>
-    <p>Built SQL Assistant, Conversational AI, and PII classification.</p>
-    <div class="metric">🤖 Production AI · ⚡ Fast delivery</div>
+    <p>Built SQL Assistant, Conversational AI, PII classification.</p>
+    <div class="metric">🤖 Production AI</div>
   </div>
 
   <div class="card">
     <h3>Leadership (2024)</h3>
-    <p>Led team of 5, delivered modules and resolved 100+ issues.</p>
+    <p>Led team, delivered modules, improved engineering practices.</p>
     <div class="metric">👥 Team scaling</div>
   </div>
 
   <div class="card">
     <h3>Optimization (2023)</h3>
-    <p>Improved search from 7s → &lt;700ms.</p>
-    <div class="metric">⚡ 10x performance</div>
+    <p>Improved performance and fixed ingestion issues.</p>
+    <div class="metric">⚡ 7s → &lt;700ms</div>
+  </div>
+</div>
+
+<!-- CASE STUDY -->
+<div class="section fade case">
+  <h2>Case Studies — Real Engineering Problems Solved</h2>
+
+  <div class="card">
+    <h3>Ingestion Failure Fix (Kafka Misdiagnosis)</h3>
+    <p><strong>Root Cause:</strong> Incorrect use of @Transactional prevented DB commit.</p>
+    <ul>
+      <li>Analyzed transaction flow</li>
+      <li>Fixed commit lifecycle</li>
+      <li>Resolved ingestion status issue</li>
+    </ul>
+    <div class="metric">🔧 RCA over assumption</div>
+  </div>
+
+  <div class="card">
+    <h3>Search Optimization (Encryption Bottleneck)</h3>
+    <p><strong>Root Cause:</strong> Cipher block not reused efficiently.</p>
+    <ul>
+      <li>Optimized encryption reuse</li>
+      <li>Reduced overhead</li>
+    </ul>
+    <div class="metric">⚡ 7s → &lt;700ms</div>
+  </div>
+
+  <div class="card">
+    <h3>Archon Analyzer (Gartner Demo)</h3>
+    <ul>
+      <li>Handled structured + unstructured data</li>
+      <li>Built system in 2 weeks</li>
+    </ul>
+    <div class="metric">🚀 Delivered under deadline</div>
+  </div>
+
+  <div class="card">
+    <h3>LWA — Secure Extraction System</h3>
+    <ul>
+      <li>Multi-source extraction</li>
+      <li>Data never leaves system</li>
+      <li>Centralized manager control</li>
+    </ul>
+    <div class="metric">🔒 Secure architecture</div>
   </div>
 
 </div>
@@ -270,32 +305,21 @@ h2 {
 <!-- TIMELINE -->
 <div class="section fade">
   <h2>Career Journey</h2>
-
   <div class="timeline">
-
     <div class="timeline-item">
       <h3>2021</h3>
       <p>Patient 360 · Angular · Fuzzy MDM</p>
     </div>
-
     <div class="timeline-item">
       <h3>2023–2026</h3>
-      <p>
-        Worked on Archon Datastore (ADS), building ingestion systems,
-        optimizing performance, leading teams, and developing AI features.
-      </p>
+      <p>Archon Datastore (ADS): systems, AI, performance & leadership</p>
     </div>
-
   </div>
 </div>
 
 <script>
 function toggleTheme(){
   document.body.classList.toggle('light');
-  localStorage.setItem('theme', document.body.classList.contains('light')?'light':'dark');
-}
-if(localStorage.getItem('theme')==='light'){
-  document.body.classList.add('light');
 }
 
 const observer = new IntersectionObserver(entries=>{
