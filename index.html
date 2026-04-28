@@ -1,312 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Clement Joshua | SDE III</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clement Josh | SDE III</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #f9fafb;
-      --card: #ffffff;
-      --text: #111827;
-      --subtext: #6b7280;
-      --accent: #2563eb;
-      --border: #e5e7eb;
-    }
+<style>
+:root {
+  --bg:#0b0f19;
+  --card:#111827;
+  --text:#f9fafb;
+  --sub:#9ca3af;
+  --accent:#60a5fa;
+  --border:#1f2937;
+}
 
-    body.dark {
-      --bg: #0b0f19;
-      --card: #111827;
-      --text: #f9fafb;
-      --subtext: #9ca3af;
-      --accent: #60a5fa;
-      --border: #1f2937;
-    }
+body.light {
+  --bg:#f9fafb;
+  --card:#ffffff;
+  --text:#111827;
+  --sub:#6b7280;
+  --accent:#2563eb;
+  --border:#e5e7eb;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: 0.3s ease;
-    }
+/* NAV */
+.nav {
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  padding:18px 40px;
+  border-bottom:1px solid var(--border);
+  z-index:10;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
-    }
+/* HERO */
+.hero {
+  max-width:1100px;
+  margin:120px auto 80px;
+  padding:0 20px;
+}
 
-    .card {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 30px;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-    }
+.hero-flex {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+}
 
-    h1 {
-      font-size: 32px;
-      font-weight: 600;
-    }
+.hero-text {
+  flex:1;
+}
 
-    .role {
-      color: var(--accent);
-      margin-top: 5px;
-      font-weight: 500;
-    }
+.hero h1 {
+  font-size:44px;
+  line-height:1.2;
+}
 
-    .contact {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--subtext);
-    }
+.hero span {
+  color:var(--accent);
+}
 
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+.hero p {
+  margin-top:20px;
+  color:var(--sub);
+  font-size:18px;
+}
 
-    section {
-      margin-top: 30px;
-    }
+.hero-image img {
+  width:260px;
+  height:260px;
+  object-fit:cover;
+  border-radius:20px;
+  border:1px solid var(--border);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
 
-    h2 {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--subtext);
-      margin-bottom: 12px;
-    }
+.contact {
+  margin-top:20px;
+  display:flex;
+  gap:20px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+.contact a {
+  color:var(--accent);
+  text-decoration:none;
+}
 
-    .badge {
-      display: inline-block;
-      padding: 6px 10px;
-      margin: 4px;
-      border-radius: 8px;
-      background: rgba(37,99,235,0.1);
-      color: var(--accent);
-      font-size: 12px;
-    }
+/* SECTION */
+.section {
+  max-width:1100px;
+  margin:120px auto;
+  padding:0 20px;
+}
 
-    .job {
-      margin-bottom: 15px;
-    }
+h2 {
+  margin-bottom:25px;
+}
 
-    .job-title {
-      font-weight: 500;
-    }
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
 
-    .job-meta {
-      font-size: 13px;
-      color: var(--subtext);
-    }
+/* CARD */
+.card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px;
+  margin-bottom:20px;
+  transition:0.3s;
+}
 
-    /* Achievements */
-    .achievements {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+.card:hover {
+  transform:translateY(-5px);
+}
 
-    .achievement-card {
-      background: linear-gradient(135deg, var(--card), rgba(0,0,0,0.02));
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      transition: 0.25s ease;
-    }
+.metric {
+  margin-top:10px;
+  color:var(--accent);
+}
 
-    .achievement-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    }
+/* TIMELINE */
+.timeline {
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
 
-    .achievement-title {
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
+.timeline-item {
+  border-left:2px solid var(--border);
+  padding-left:20px;
+  position:relative;
+}
 
-    .achievement-desc {
-      font-size: 14px;
-      color: var(--subtext);
-    }
+.timeline-item::before {
+  content:'';
+  position:absolute;
+  left:-7px;
+  top:6px;
+  width:12px;
+  height:12px;
+  background:var(--accent);
+  border-radius:50%;
+}
 
-    .metric {
-      margin-top: 10px;
-      font-size: 13px;
-      color: var(--accent);
-      font-weight: 500;
-    }
+.timeline-item h3 {
+  color:var(--accent);
+}
 
-    /* Toggle Button */
-    .toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 8px 14px;
-      cursor: pointer;
-      font-size: 13px;
-      color: var(--text);
-    }
+/* ANIMATION */
+.fade {
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.8s;
+}
+.fade.show {
+  opacity:1;
+  transform:translateY(0);
+}
 
-    @media (max-width: 700px) {
-      .grid, .achievements {
-        grid-template-columns: 1fr;
-      }
-    }
-
-  </style>
+/* MOBILE */
+@media(max-width:900px){
+  .hero-flex {
+    flex-direction:column-reverse;
+    text-align:center;
+  }
+  .grid {
+    grid-template-columns:1fr;
+  }
+  .contact {
+    justify-content:center;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<button class="toggle" onclick="toggleDark()">🌙 Dark</button>
+<div class="nav">
+  <div>Clement Joshua</div>
+  <div onclick="toggleTheme()" style="cursor:pointer;">🌙</div>
+</div>
 
-<div class="container">
-  <div class="card">
+<!-- HERO -->
+<div class="hero fade">
+  <div class="hero-flex">
 
-    <h1>Clement Merwin Joshua P</h1>
-    <div class="role">Software Development Engineer III</div>
+    <div class="hero-text">
+      <h1>
+        Building <span>AI systems</span>, scalable platforms, and high-performance backend systems.
+      </h1>
 
-    <div class="contact">
-      joejoshua99@gmail.com · +91 9952119583 · 
-      <a href="https://www.linkedin.com/in/clement-josh/" target="_blank">LinkedIn</a> · Bangalore
+      <p>
+        Software Development Engineer III working on Archon Datastore (ADS).
+        I build systems from scratch, optimize performance, and deliver production-ready AI solutions.
+      </p>
+
+      <div class="contact">
+        <a href="mailto:joejoshua99@gmail.com">📧 Email</a>
+        <a href="https://www.linkedin.com/in/clement-josh/" target="_blank">🔗 LinkedIn</a>
+      </div>
     </div>
 
-    <section>
-      <h2>Summary</h2>
+    <div class="hero-image">
+      <img src="your-image.jpg" alt="Clement Joshua">
+    </div>
+
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section fade">
+  <h2>Skills</h2>
+
+  <div class="grid">
+    <div class="card"><strong>Backend</strong><p>Java · Spring Boot · Python · FastAPI</p></div>
+    <div class="card"><strong>Big Data</strong><p>Hadoop · Spark · Trino</p></div>
+    <div class="card"><strong>AI</strong><p>OpenAI · LangChain · HuggingFace</p></div>
+    <div class="card"><strong>Cloud</strong><p>AWS (S3, EC2, Lambda)</p></div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section fade">
+  <h2>Projects & Impact (ADS)</h2>
+
+  <div class="card">
+    <h3>Archon Analyzer & LWA (2026)</h3>
+    <p>Built two applications from scratch without requirements or UI mocks.</p>
+    <div class="metric">🚀 Greenfield systems · ⚡ Zero-error demos</div>
+  </div>
+
+  <div class="card">
+    <h3>AI Platform (2025)</h3>
+    <p>Built SQL Assistant, Conversational AI, and PII classification.</p>
+    <div class="metric">🤖 Production AI · ⚡ Fast delivery</div>
+  </div>
+
+  <div class="card">
+    <h3>Leadership (2024)</h3>
+    <p>Led team of 5, delivered modules and resolved 100+ issues.</p>
+    <div class="metric">👥 Team scaling</div>
+  </div>
+
+  <div class="card">
+    <h3>Optimization (2023)</h3>
+    <p>Improved search from 7s → &lt;700ms.</p>
+    <div class="metric">⚡ 10x performance</div>
+  </div>
+
+</div>
+
+<!-- TIMELINE -->
+<div class="section fade">
+  <h2>Career Journey</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>2021</h3>
+      <p>Patient 360 · Angular · Fuzzy MDM</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>2023–2026</h3>
       <p>
-        SDE III specializing in AI-driven systems, big data infrastructure, and high-speed delivery.
-        Proven ability to build production-ready AI solutions while maintaining scalability and security.
+        Worked on Archon Datastore (ADS), building ingestion systems,
+        optimizing performance, leading teams, and developing AI features.
       </p>
-    </section>
-
-    <section class="grid">
-      <div>
-        <h2>Skills</h2>
-        <div>
-          <span class="badge">Java</span>
-          <span class="badge">Spring Boot</span>
-          <span class="badge">Python</span>
-          <span class="badge">FastAPI</span>
-          <span class="badge">Kafka</span>
-          <span class="badge">Redis</span>
-          <span class="badge">Spark</span>
-          <span class="badge">Hadoop</span>
-          <span class="badge">SQL</span>
-        </div>
-      </div>
-
-      <div>
-        <h2>Education</h2>
-        <p><strong>M.Tech Cyber Security</strong><br>Karunya Institute (2021)</p>
-        <p style="margin-top:10px;"><strong>B.Tech Computer Science</strong><br>Karunya Institute (2021)</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Experience</h2>
-      <div class="job">
-        <div class="job-title">SDE III</div>
-        <div class="job-meta">Platform 3 · 2025 – Present · Bengaluru</div>
-      </div>
-      <div class="job">
-        <div class="job-title">Senior Engineer / Team Lead</div>
-        <div class="job-meta">Platform 3 · 2024 – 2025 · Chennai</div>
-      </div>
-      <div class="job">
-        <div class="job-title">Software Engineer</div>
-        <div class="job-meta">Platform 3 · 2022 – 2024 · Chennai</div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Key Achievements</h2>
-
-      <div class="achievements">
-
-        <div class="achievement-card">
-          <div class="achievement-title">AI Feature Delivery</div>
-          <div class="achievement-desc">
-            Built SQL Assistant, Conversational AI, and PII classification systems in production.
-          </div>
-          <div class="metric">⚡ Delivered in weeks</div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-title">Execution Speed</div>
-          <div class="achievement-desc">
-            Delivered critical modules like Archive & Rehydration under aggressive timelines.
-          </div>
-          <div class="metric">🚀 50–70% faster</div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-title">Performance Optimization</div>
-          <div class="achievement-desc">
-            Re-engineered search to drastically reduce latency across large datasets.
-          </div>
-          <div class="metric">⚡ 7s → &lt;700ms</div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-title">Scalable Architecture</div>
-          <div class="achievement-desc">
-            Built ingestion systems handling large-scale unstructured data pipelines.
-          </div>
-          <div class="metric">📦 Multi-cloud ready</div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-title">Leadership</div>
-          <div class="achievement-desc">
-            Led 5 engineers delivering 6 modules and 150+ fixes.
-          </div>
-          <div class="metric">👥 Strong team impact</div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-title">Security Improvements</div>
-          <div class="achievement-desc">
-            Fixed encryption vulnerabilities and improved system stability.
-          </div>
-          <div class="metric">🔐 Production-grade</div>
-        </div>
-
-      </div>
-    </section>
+    </div>
 
   </div>
 </div>
 
 <script>
-  function toggleDark() {
-    document.body.classList.toggle("dark");
-    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-  }
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  localStorage.setItem('theme', document.body.classList.contains('light')?'light':'dark');
+}
+if(localStorage.getItem('theme')==='light'){
+  document.body.classList.add('light');
+}
 
-  // Load saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-  }
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
+    }
+  });
+});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
 </script>
 
 </body>
